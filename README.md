@@ -6,7 +6,8 @@
 * The NDS  MicroLua executable (https://sourceforge.net/projects/microlua/files/)
 * All the files needed to run MicroLua ( [same link](https://sourceforge.net/projects/microlua/files/) ↑)
 * An [OpenClassrooms](https://openclassrooms.com/fr/old-courses-pdf) course by [Reylak](https://github.com/Reylak)
-* My trials and tests about it (/lua/scripts/my_scripts)
+* My trials and tests about it [My code](https://github.com/L4KK4S/NDS_MicroLua/tree/main/lua/scripts)
+
 
 **How to launch MicroLua for the first time?**
 * Open DesMuMe
