@@ -16,5 +16,6 @@
 * Then click on browse folder and browse until this git repo and click ok
 * Use ctr+O and open MicroLua.nds
 * Enjoy
-  
- (sometimes its not need because I let the config files of DesMuMe here)
+
+
+(sometimes its not need because I let the config files of DesMuMe here)
