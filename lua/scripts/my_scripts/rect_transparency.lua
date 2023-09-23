@@ -7,8 +7,8 @@ coefficient = 50  -- initialisation du coefficient
 while not Keys.newPress.Start do   -- boucle du programme
 
     Controls.read()  -- initialisation de la récupération des touches
-
-    if Keys.held.Up and coefficient < 99 then  -- cas touche haut
+     
+    if Keys.held.Up and coefficient < 100 then  -- cas touche haut
         coefficient = coefficient + 1
     end
 
@@ -23,7 +23,7 @@ while not Keys.newPress.Start do   -- boucle du programme
 
     -- affichage deuxième rect
     screen.setAlpha(99 - tmp)
-    screen.drawFillRect(SCREEN_DOWN, 110, 0, 50, 50, Color.new(0, 31, 0))
+    screen.drawFillRect(SCREEN_DOWN, 110, 0, 60, 50, Color.new(0, 31, 0))
 
     -- affichage texte
     screen.setAlpha(99)
