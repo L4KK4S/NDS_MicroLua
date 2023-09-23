@@ -7,3 +7,11 @@
 * All the files needed to run MicroLua ( [same link](https://sourceforge.net/projects/microlua/files/) ↑)
 * An [OpenClassrooms](https://openclassrooms.com/fr/old-courses-pdf) course by [Reylak](https://github.com/Reylak)
 * My trials and tests about it (/lua/scripts/my_scripts)
+
+**How to launch MicroLua for the first time?**
+* Open DesMuMe
+* Click on Config > Slot 2 (GBA slot)
+* Select MPCF Flash Card Device
+* Then click on browse folder and browse until this git repo and click ok
+* Use ctr+O and open MicroLua.nds
+* Enjoy
