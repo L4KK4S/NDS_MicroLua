@@ -1,12 +1,12 @@
 -- Exercice consistant à bouger une image avec le stylet
 
 -- load the background image
-background = Image.load("data/img/forest.png", RAM)
+background = Image.load("data/img/forest.png", VRAM)
 screen.blit(SCREEN_DOWN, 0, 0, background) -- display the background
 
 -- image specification
 x, y = 0, 0 
-slime = Image.load("data/img/slime.png", RAM) -- load the slime image
+slime = Image.load("data/img/slime.png", VRAM) -- load the slime image
 image_size = 32
 
 while not Keys.newPress.Start do   -- boucle du programme
@@ -38,6 +38,14 @@ while not Keys.newPress.Start do   -- boucle du programme
 
     render()    -- affichage 
 
-end  -- fin du programme
+end  -- fin de la boucle principale
 
- 
+-- on détruit les variables et on efface la mémoire
+Image.destroy(background) 
+Image.destroy(slime)
+
+background = nil
+slime = nil
+
+x = nil
+y = nil
