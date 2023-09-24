@@ -1,20 +1,19 @@
 -- Exercice consistant à bouger une image avec le stylet
 
--- load the background image
+-- chargement de l'image de fond
 background = Image.load("data/img/forest.png", VRAM)
-screen.blit(SCREEN_DOWN, 0, 0, background) -- display the background
 
--- image specification
+-- spécification de l'image
 x, y = 0, 0 
-slime = Image.load("data/img/slime.png", VRAM) -- load the slime image
+slime = Image.load("data/img/slime.png", VRAM) -- on charge l'image du slime
 image_size = Image.width
 
 while not Keys.newPress.Start do   -- boucle du programme
 
     Controls.read()  -- initialisation de la récupération des touches
 
-    screen.blit(SCREEN_DOWN, 0, 0, background) -- display the background
-    screen.blit(SCREEN_DOWN, x, y, slime) -- display the slime
+    screen.blit(SCREEN_DOWN, 0, 0, background) -- on affiche l'image de fond
+    screen.blit(SCREEN_DOWN, x, y, slime) -- on affiche le slime
 
     -- on update la position grace à la lecture des mouvements du stylet
     x = x + Stylus.deltaX
