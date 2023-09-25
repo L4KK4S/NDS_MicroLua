@@ -8,6 +8,7 @@ game_board =  {
 }
 
 white = Color.new(31, 31, 31)
+red = Color.new(31, 0, 0)
 turn = 1
 game = true
 
@@ -223,7 +224,9 @@ function win()
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
 
-        game = false
+        screen.drawFillRect(SCREEN_DOWN, 53, 40, 203, 40, red) -- on trace la ligne qui indique que 3 cases sont alignées
+
+        game = false -- le jeu se finit
     
     end
 
@@ -235,6 +238,8 @@ function win()
         else
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
+
+        screen.drawFillRect(SCREEN_DOWN, 53, 90, 203, 90, red) 
 
         game = false
     
@@ -249,6 +254,8 @@ function win()
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
 
+        screen.drawFillRect(SCREEN_DOWN, 53, 140, 203, 140, red) 
+
         game = false
     
     end
@@ -261,6 +268,8 @@ function win()
         else
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
+
+        screen.drawFillRect(SCREEN_DOWN, 71, 21, 71, 171, red) 
 
         game = false
     
@@ -275,6 +284,8 @@ function win()
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
 
+        screen.drawFillRect(SCREEN_DOWN, 121, 21, 121, 171, red)
+
         game = false
     
     end
@@ -287,6 +298,8 @@ function win()
         else
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
+
+        screen.drawFillRect(SCREEN_DOWN, 171, 21, 171, 171, red)
 
         game = false
     
@@ -301,6 +314,8 @@ function win()
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
 
+        screen.drawLine(SCREEN_DOWN, 53, 21, 203, 171, red)
+
         game = false
     
     end
@@ -313,12 +328,34 @@ function win()
         else
             screen.print(SCREEN_UP, 0, 0, "Player 2 a gagne")
         end
+
+        screen.drawLine(SCREEN_DOWN, 203, 21, 53, 171, red)
         
         game = false
 
     end
 
 end
+
+
+function replay()
+
+    screen.print(SCREEN_UP, 0, 15, "Appuyer sur A pour rejouer")
+
+    if Keys.held.A then 
+
+        game_board =  {
+            {" ", " ", " "},
+            {" ", " ", " "},
+            {" ", " ", " "}
+        }
+        turn = 1
+        game = true
+    
+    end
+
+end
+
 
 while not Keys.newPress.Start do   -- boucle du programme
 
@@ -327,6 +364,10 @@ while not Keys.newPress.Start do   -- boucle du programme
     board_diplay()
     get_click()
     win()
+
+    if not game then 
+        replay()
+    end
 
     render()    -- affichage 
 
