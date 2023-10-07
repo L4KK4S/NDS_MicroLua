@@ -1,6 +1,6 @@
 -- variables du jeu
 tile_size = 16
-map_x, map_y = 16, 15
+map_x, map_y = 19, 15
 sprite_width, sprite_height = 24, 32
 x_velocity, y_velocity = 2, 2
 
@@ -14,7 +14,7 @@ direction = 4 -- direction du joueur - 1: bas - 2: gauche - 3: haut - 4: droite
 x, y = 0, 0 -- coordonnées du player
 pressed = false -- pression d'une touche
 x_scroll, y_scroll = 0, 0
-x_scroll_max, y_scroll_max = 0, 3 * tile_size
+x_scroll_max, y_scroll_max = 3 * tile_size, 3 * tile_size
 
 -- Ajout des animations, avec un intervalle de 300ms entre chaque frame
 perso:addAnimation ({6,7,8}, 300)		-- Marcher vers le bas
@@ -28,6 +28,7 @@ while not Keys.newPress.Start do
     Controls.read()
     ScrollMap.draw(SCREEN_DOWN, map)
 
+    screen.print(SCREEN_UP, 0, 15, "x_scroll: "..x_scroll.." y_scroll: "..y_scroll)
 
     touche = true  
 	if Keys.held.Down then -- si on presse la touche du bas alors on met à jour la direction et la position		
@@ -49,7 +50,7 @@ while not Keys.newPress.Start do
         else
             screen.print(SCREEN_UP, 0, 0, "DEPLACEMENT GAUCHE")
             if x_scroll > 0 then -- si on peut encore scroller la map on le fait
-                x_scroll = x_scroll + tile_size / 8
+                x_scroll = x_scroll - tile_size / 8
             end
             ScrollMap.scroll(map, x_scroll, y_scroll) -- on affiche le scroll de la map
         end
@@ -72,7 +73,7 @@ while not Keys.newPress.Start do
             x = x + x_velocity
         else
             screen.print(SCREEN_UP, 0, 0, "DEPLACEMENT DROITE")
-            if x_scroll < x_scroll then -- si on peut encore scroller la map on le fait
+            if x_scroll < x_scroll_max then -- si on peut encore scroller la map on le fait
                 x_scroll = x_scroll + tile_size / 8
             end
             ScrollMap.scroll(map, x_scroll, y_scroll) -- on affiche le scroll de la map
