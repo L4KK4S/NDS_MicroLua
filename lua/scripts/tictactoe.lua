@@ -373,3 +373,9 @@ while not Keys.newPress.Start do   -- boucle du programme
 
 end  -- fin de la boucle principale
 
+
+-- on libère la mémoire
+white = nil
+red = nil
+turn = nil
+game = nil
